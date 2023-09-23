@@ -1,36 +1,78 @@
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
+
+int solve[10][10] = {
+    {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+    {1, 2, 2, 2, 2, 2, 2, 2, 2, 1},
+    {1, 2, 3, 3, 3, 3, 3, 3, 2, 1},
+    {1, 2, 3, 4, 4, 4, 4, 3, 2, 1},
+    {1, 2, 3, 4, 5, 5, 4, 3, 2, 1},
+    {1, 2, 3, 4, 5, 5, 4, 3, 2, 1},
+    {1, 2, 3, 4, 4, 4, 4, 3, 2, 1},
+    {1, 2, 3, 3, 3, 3, 3, 3, 2, 1},
+    {1, 2, 2, 2, 2, 2, 2, 2, 2, 1},
+    {1, 1, 1, 1, 1, 1, 1, 1, 1, 1}};
+
 int main()
 {
-    int t, row, col, i;
-    // cin >> t;
+    int t;
+    cin >> t;
 
-    // while (t--)
-    // {
-        string s[10];
-        for (i = 1; i <= 10; i++)
-        {
-            cin >> s[i];
-        }
+    while (t--)
+    {
+        int ans = 0;
 
-        for (row = 1; row <= 5; row++)
+        for (size_t i = 0; i < 10; i++)
         {
-            string x = s[row];
-            for (row = 1; row <= 5; row++)
+            for (size_t j = 0; j < 10; i++)
             {
-                // if (x[row] != '.')
-                // {
-                //     cout << x[row];
-                // }
-
-                if (x[row]!='.')
+                char c;
+                cin >> c;
+                if (c == 'X')
                 {
-                    cout<<row<<" ";
+                    ans += solve[i][j];
                 }
-                
             }
         }
-        
-    // }
+        cout << ans << endl;
+    }
 }
+// #include <bits/stdc++.h>
+
+// using namespace std;
+
+// const int MAX = 200007;
+// const int MOD = 1000000007;
+
+// int score[10][10] = {
+// 	{1,1,1,1,1,1,1,1,1,1},
+// 	{1,2,2,2,2,2,2,2,2,1},
+// 	{1,2,3,3,3,3,3,3,2,1},
+// 	{1,2,3,4,4,4,4,3,2,1},
+// 	{1,2,3,4,5,5,4,3,2,1},
+// 	{1,2,3,4,5,5,4,3,2,1},
+// 	{1,2,3,4,4,4,4,3,2,1},
+// 	{1,2,3,3,3,3,3,3,2,1},
+// 	{1,2,2,2,2,2,2,2,2,1},
+// 	{1,1,1,1,1,1,1,1,1,1}
+// };
+
+// void solve() {
+// 	int ans = 0;
+// 	for (int i = 0; i < 10; i++) {
+// 		for (int j = 0; j < 10; j++) {
+// 			char c;
+// 			cin >> c;
+// 			if (c == 'X') {ans += score[i][j];}
+// 		}
+// 	}
+// 	cout << ans << '\n';
+// }
+
+// int main() {
+// 	ios::sync_with_stdio(false);
+// 	cin.tie(nullptr);
+// 	int tt; cin >> tt; for (int i = 1; i <= tt; i++) {solve();}
+// 	// solve();
+// }
