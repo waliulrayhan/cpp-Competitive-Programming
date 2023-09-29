@@ -7,21 +7,14 @@ const int MOD = 1000000007;
 void solution() {
 	//Solve Here
     int a[3];
+
     for (size_t i = 0; i < 3; i++)
     {
         cin>>a[i];
     }
     sort(a,a+3);
 
-    if ((a[0]+a[1])==a[2])
-    {
-        cout<<"YES"<<endl;
-    }
-    else
-    {
-        cout<<"NO"<<endl;
-    }
-    
+    cout<<a[1]<<endl;
 }
 
 int main() {

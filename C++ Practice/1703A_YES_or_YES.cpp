@@ -6,14 +6,12 @@ const int MOD = 1000000007;
 
 void solution() {
 	//Solve Here
-    int a[3];
-    for (size_t i = 0; i < 3; i++)
-    {
-        cin>>a[i];
-    }
-    sort(a,a+3);
+    string s;
+    cin>>s;
 
-    if ((a[0]+a[1])==a[2])
+    transform(s.begin(), s.end(), s.begin(), ::toupper);
+
+    if (s=="YES")
     {
         cout<<"YES"<<endl;
     }

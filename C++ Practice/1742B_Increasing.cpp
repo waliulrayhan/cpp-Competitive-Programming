@@ -6,20 +6,35 @@ const int MOD = 1000000007;
 
 void solution() {
 	//Solve Here
-    int a[3];
-    for (size_t i = 0; i < 3; i++)
+    int n;
+    cin>>n;
+
+    int a[n];
+
+    for (size_t i = 0; i < n; i++)
     {
         cin>>a[i];
     }
-    sort(a,a+3);
+    
+    sort(a,a+n);
 
-    if ((a[0]+a[1])==a[2])
+    int ans=0;
+
+    for (size_t i = 0; i < n; i++)
     {
-        cout<<"YES"<<endl;
+        if (a[i]==a[i+1])
+        {
+            ans++;
+        }
+    }
+    
+    if (ans!=0)
+    {
+        cout<<"NO"<<endl;
     }
     else
     {
-        cout<<"NO"<<endl;
+        cout<<"YES"<<endl;
     }
     
 }
