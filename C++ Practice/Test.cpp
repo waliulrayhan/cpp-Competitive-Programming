@@ -1,23 +1,29 @@
-#include <vector>
-#include <unordered_map>
-#include <bits/stdc++.h>
+#include <iostream>
+#include <cmath>
 
-class Solution {
-public:
-    vector<int> twoSum(vector<int>& nums, int target) {
-        unordered_map<int, int> numToIndex;
-        vector<int> result;
-
-        for (int i = 0; i < nums.size(); i++) {
-            int complement = target - nums[i];
-            if (numToIndex.find(complement) != numToIndex.end()) {
-                result.push_back(numToIndex[complement]);
-                result.push_back(i);
-                return result;
-            }
-            numToIndex[nums[i]] = i;
+int removeFirst(int n)
+{
+    int tmp(0);
+    for (int i(0);; ++i)
+    {
+        int m = n % 10;
+        n /= 10;
+        if (n != 0)
+        {
+            tmp += std::pow(10, i) * m;
         }
-
-        return result; // No solution found
+        else
+        {
+            break;
+        }
     }
-};
+    return tmp;
+}
+
+
+int main(){
+    int s;
+    std::cin >> s;
+    s = removeFirst(s);
+    std::cout << s;
+}
